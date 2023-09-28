@@ -15,7 +15,7 @@ jobs:
 
       - name: Step 2 (check for failure and show in annotation)
         id: step2
-        if: failure()
+        if: ${{ failure() }}
         run: |
             echo "Step 1 failed. See the 'Annotations' tab for details."
 
