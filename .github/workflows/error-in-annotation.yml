@@ -1,0 +1,11 @@
+name: Show Error in Annotation
+on:
+  workflow_dispatch:
+jobs:
+  Error-In_Annotation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        id: hello
+        run: echo "::error::Filename $filename doesn't match possible files"
+        continue-on-error: true
