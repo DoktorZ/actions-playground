@@ -34,6 +34,7 @@ jobs:
       run: |
         # If there was a failure in the previous steps, display an error annotation
         echo "::error::Error occurred during the build or deployment process."
+      continue-on-error: true
 
     - name: Complete workflow
       if: always()
