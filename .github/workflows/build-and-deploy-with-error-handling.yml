@@ -27,7 +27,7 @@ jobs:
 
         # Copy the built files to the destination path
         cp -r ./path/to/built/files/* $DESTINATION_PATH || echo "Error while copying files"
-        continue-on-error: true
+      continue-on-error: true
 
     - name: Show error in annotation
       if: failure()
