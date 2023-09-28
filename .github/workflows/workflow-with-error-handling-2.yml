@@ -1,4 +1,4 @@
-name: Example Workflow
+name: Workflow with error handling 2
 on:
   workflow_dispatch:
 jobs:
