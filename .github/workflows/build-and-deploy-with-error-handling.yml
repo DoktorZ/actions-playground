@@ -1,0 +1,41 @@
+name: Build and Deploy
+on:
+  workflow_dispatch:
+jobs:
+  buil-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build your application
+      run: |
+        # Add your build commands here
+        # For example:
+        # npm install
+        # npm run build
+        # or
+        # ./gradlew build
+      continue-on-error: true # Continue the workflow even if the build fails
+
+    - name: Deploy application
+      run: |
+        # Define the destination path where you want to copy the built files
+        DESTINATION_PATH=/path/to/destination
+
+        # Copy the built files to the destination path
+        cp -r ./path/to/built/files/* $DESTINATION_PATH || echo "Error while copying files"
+
+    - name: Show error in annotation
+      if: failure()
+      run: |
+        # If there was a failure in the previous steps, display an error annotation
+        echo "::error::Error occurred during the build or deployment process."
+
+    - name: Complete workflow
+      if: always()
+      run: |
+        # This step will always run, providing a final status
+        echo "Workflow completed."
