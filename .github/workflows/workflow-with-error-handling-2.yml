@@ -15,8 +15,8 @@ jobs:
 
       - name: Step 2 (check for failure and show in annotation)
         id: step2
+        if: failure()
         run: |
-          if: failure()
             echo "Step 1 failed. See the 'Annotations' tab for details."
 
       - name: Step 3 (always executed to finalize workflow)
