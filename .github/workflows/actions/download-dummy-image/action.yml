@@ -1,6 +1,0 @@
-name: download-dummy-image
-description: 'Download Dummy Image'
-
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
