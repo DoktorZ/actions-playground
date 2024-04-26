@@ -10,28 +10,34 @@ jobs:
       - name: Hello world action step
         id: hello
         # uses: actions/hello-world-docker-action@v2
-        uses: DoktorZAG/hello-world-docker-action@v2.0.1
+        uses: DoktorZAG/hello-world-docker-action@v2.0.2
         with:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
-  
-  download-and-upload:
-    name: Download and Upload
-    runs-on: ubuntu-latest
-
-    steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v4
-        
-      - name: Download
-        # uses: DoktorZAG/actions-playground@v0.0.1
-        uses: DoktorZAG/download-dummy-image-action@v0.0.3
-        # uses: ./.github/actions/download-dummy-image
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: dummy-image
-          path: ${{ github.workspace }}
+          path: ${{ github.workspace }}/file.png
+  
+#  download-and-upload:
+#    name: Download and Upload
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      # - name: Checkout
+#      #   uses: actions/checkout@v4
+#        
+#      - name: Download
+#       # uses: DoktorZAG/actions-playground@v0.0.1
+#        uses: DoktorZAG/download-dummy-image-action@v0.0.3
+#        # uses: ./.github/actions/download-dummy-image
+#
+#      - name: Upload
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: dummy-image
+#          path: ${{ github.workspace }}
