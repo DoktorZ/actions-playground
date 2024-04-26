@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      # - name: Checkout
+      #   uses: actions/checkout@v4
         
       - name: Download
         # uses: DoktorZAG/actions-playground@v0.0.1
-        uses: ./.github/actions/download-dummy-image
+        uses: DoktorZAG/download-dummy-image-action@v0.0.1
+        # uses: ./.github/actions/download-dummy-image
 
       - name: Upload
         uses: actions/upload-artifact@v4
