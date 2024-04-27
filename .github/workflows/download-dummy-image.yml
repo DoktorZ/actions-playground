@@ -10,7 +10,8 @@ jobs:
       - name: Hello world action step
         id: hello
         # uses: actions/hello-world-docker-action@v2
-        uses: DoktorZAG/hello-world-docker-action@v2.0.3
+        # uses: DoktorZAG/hello-world-docker-action@v2.0.3
+        uses: DoktorZAG/hello-world-docker-action@main
         with:
           who-to-greet: 'Doktor ZAG'
       # Use the output from the `hello` step
@@ -22,7 +23,6 @@ jobs:
         with:
           name: dummy-image
           path: ${{ github.workspace }}/file.png
-          compression-level: '0'
   
 #  download-and-upload:
 #    name: Download and Upload
