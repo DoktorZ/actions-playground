@@ -22,6 +22,7 @@ jobs:
         with:
           name: dummy-image
           path: ${{ github.workspace }}/file.png
+          compression-level: '0'
   
 #  download-and-upload:
 #    name: Download and Upload
